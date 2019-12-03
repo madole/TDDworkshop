@@ -1,0 +1,129 @@
+import { Cite } from "spectacle"
+import { DarkSlide, CodeSlide } from "./slides"
+import RegularComponent from "./regular-component"
+
+# TDD!
+
+## Total Defect Destruction 🤘🏻
+
+---
+
+export default DarkSlide
+
+export const transition = ["zoom"]
+
+# Test Driven Development
+
+## What even is that?
+
+---
+
+**Test-driven development (TDD)** is a software development process that relies on the repetition of a very short development cycle:
+
+- first the developer writes an (initially failing) automated test case that defines a desired improvement or new function
+
+* then produces the minimum amount of code to pass that test
+
+- and finally refactors the new code to acceptable standards.
+
+---
+
+# Key Benefits
+
+- Short feedback loops
+- Better quality code
+- Less time debugging
+- Less bugs
+- Less time fixing defects
+- Confidence refactoring
+- You're forced to write small functions focused on one thing
+- TDD tells you whether your last change (or refactoring) broke previously working code
+
+---
+
+# Common mistakes
+
+- Testing the function internals
+- Thinking it takes too long (Time is made up by not having to fix bugs)
+- "How do I know what to test if I dont know what I'm going to write?"
+- 100% test coverage (Testing a <button>Button</button> is a button is redundant)
+- You don't have to do everything TDD straight away
+
+---
+
+# How do we do it?
+
+<img src="https://media.giphy.com/media/10yIEN8cMn4i9W/giphy.gif" />
+
+---
+
+export default DarkSlide
+
+export const transition = ["zoom"]
+
+# 🔴 Red 🔴
+
+# ✅ Green ✅
+
+# 😎 Refactor 😎
+
+---
+
+# 🔴 Red 🔴
+
+Write a failing test
+
+```javascript
+test("it should reverse the string", () => {
+  const str = "This is a test"
+  const expected = "tset a si sihT"
+  const result = reverseMyString(str)
+
+  expect(result).toEqual(expected)
+})
+```
+
+---
+
+# ✅ Green ✅
+
+Write just enough code to get it working
+
+```javascript
+function reverseMyString(str) {
+  let newString = ""
+  for (let i = str.length - 1; i >= 0; i--) {
+    newString += str[i]
+  }
+  return newString
+}
+```
+
+---
+
+# 😎 Refactor 😎
+
+Refactor the code safe in the knowledge your code will work
+
+```javascript
+function reverseMyString(str) {
+  return str
+    .split("")
+    .reverse()
+    .join("")
+}
+```
+
+---
+
+# Repeat
+
+<img src="https://media.giphy.com/media/nLmg6CW4rAiOc/giphy.gif" />
+
+---
+
+export default DarkSlide
+
+export const transition = ["zoom"]
+
+# EXAMPLES
